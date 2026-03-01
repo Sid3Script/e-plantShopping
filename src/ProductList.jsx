@@ -12,7 +12,7 @@ function ProductList({ onHomeClick }) {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
 
-  // EXACTLY what the spec describes for total quantity in cart
+  // Total quantity helper (matches project spec idea)
   const calculateTotalQuantity = () => {
     return cartItems
       ? cartItems.reduce((total, item) => total + item.quantity, 0)
@@ -347,6 +347,11 @@ function ProductList({ onHomeClick }) {
           </div>
         </div>
         <div style={styleObjUl}>
+          <div>
+            <a href="/" onClick={handleHomeClick} style={styleA}>
+              Home
+            </a>
+          </div>
           <div>
             <a href="#" onClick={handlePlantsClick} style={styleA}>
               Plants
